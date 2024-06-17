@@ -1,8 +1,8 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
-function CategoryList({ categoryList }) {
+function CategoryList({ categoryList, lng }) {
   return (
     <div
       className="mx-4 md:mx-22 lg:mx-52 grid grid-cols-3
@@ -11,7 +11,7 @@ function CategoryList({ categoryList }) {
       {categoryList.length > 0
         ? categoryList.map((category, index) => (
             <Link
-              href={"/search/" + category.name}
+              href={`/${lng}/search/${category.name}`}
               key={index}
               className={`flex flex-col items-center
              justify-center gap-2

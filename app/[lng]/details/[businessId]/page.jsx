@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation";
 function BusinessDetail({ params }) {
   const { businessId, lng } = params;
   const token = getSessionToken();
-  const isTokenExpired = isSessionTokenExpired(token);
+  const isTokenExpired = token ? isSessionTokenExpired(token) : true;
   const router = useRouter();
 
   const [business, setBusiness] = useState([]);
@@ -26,6 +26,8 @@ function BusinessDetail({ params }) {
 
   useEffect(() => {
     checkUserAuth();
+    console.log(isTokenExpired);
+    console.log(lng);
   }, []);
 
   const getBusiness = async () => {

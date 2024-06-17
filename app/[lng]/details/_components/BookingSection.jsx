@@ -144,6 +144,13 @@ function BookingSection({ children, business }) {
       return true;
     }
 
+    const isFriday = moment(date).day() === 5;
+
+    const threeTillWeekend = moment(date).day(5).hours(15);
+    if (isFriday) {
+      return selectedDateTime.isAfter(threeTillWeekend);
+    }
+
     if (moment(date).isSame(now, "day")) {
       return selectedDateTime.isBefore(threeHoursLater);
     }

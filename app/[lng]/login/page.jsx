@@ -5,13 +5,15 @@ import { Descope } from "@descope/nextjs-sdk";
 
 const PageAuth = () => {
   return (
-    <Descope
-      flowId="sign-up-or-in"
-      // onSuccess={(e) => console.log("Logged in!", e.detail.user.email)}
-      // onError={(e) => console.log("Could not logged in!")}
-      redirectAfterSuccess="/"
-      // redirectAfterError="/error-page"
-    />
+    <div className="flex justify-center">
+      <Descope
+        flowId="sign-up-or-in"
+        // onSuccess={(e) => console.log("Logged in!", e.detail.user.email)}
+        // onError={(e) => console.log("Could not logged in!")}
+        redirectAfterSuccess="/"
+        // redirectAfterError="/error-page"
+      />
+    </div>
   );
 };
 
